@@ -26,8 +26,7 @@ class Solution {
 
     };
 //better solution O(n*m)
-
-class Solution {
+class Solution2 {
     public:
         vector<vector<string>> groupAnagrams(vector<string>& strs) {
             unordered_map<string, vector<string>> res;
@@ -49,3 +48,4 @@ class Solution {
             return result;
         }
     };
+

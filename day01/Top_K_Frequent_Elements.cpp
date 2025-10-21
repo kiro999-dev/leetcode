@@ -43,8 +43,10 @@ class Solution2 {
             
             vector<vector<int>> bucket(nums.size() + 1);
             for (auto& p : freq)
+            {
                 bucket[p.second].push_back(p.first);
-    
+            }
+            
             vector<int> result;
             for (int i = bucket.size() - 1; i >= 0 && result.size() < k; i--) {
                 for (int num : bucket[i]) {
