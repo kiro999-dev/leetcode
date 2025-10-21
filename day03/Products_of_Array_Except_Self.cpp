@@ -34,7 +34,30 @@ public:
         return res;
     }
 };
-
+//my second solution after neetcode vd :) so good
+class Solution2
+{
+public:
+    vector<int> productExceptSelf(vector<int> &nums)
+    {
+        int n = nums.size();
+        vector<int> res(n);
+        int prefix  = 1;
+        int postfix = 1;
+        for (int i = 0; i < n; i++)
+        {
+            res[i] = prefix;
+            prefix *= nums[i];
+        }
+        
+        for (int i = n -1; i >= 0; i--)
+        {
+          res[i] = res[i] * postfix;
+          postfix *= nums[i];
+        }
+        return res;
+    }
+};
 int main()
 {
     Solution a;
