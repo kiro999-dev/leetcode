@@ -14,7 +14,6 @@ bool isValidSudoku(vector<vector<char>> &board)
         unordered_map<char, bool> row;
         unordered_map<char, bool> col;
         unordered_map<char, bool> box;
-
         for (int j = 0; j < 9; j++)
         {
             if (board[i][j] != '.' && row.count(board[i][j]))
@@ -27,8 +26,8 @@ bool isValidSudoku(vector<vector<char>> &board)
                 cout << "col " << i << " not valid\n";
                 return false;
             }
-            int boxRow = 3 * (i / 3) + j / 3;
-            int boxCol = 3 * (i % 3) + j % 3;
+            int boxRow = 3 * (i / 3) + j / 3; 
+            int boxCol = 3 * (i % 3) + j % 3; 
             char val = board[boxRow][boxCol];
             cout<<val<<" ";
             if (val != '.' && box.count(val))
@@ -54,7 +53,7 @@ int main()
 {
 
     vector<vector<char>> board = {
-        {'5', '3', '4', '6', '7', '8', '9', '1', '2'},
+       {'5', '3', '4', '6', '7', '8', '9', '1', '2'},
         {'6', '7', '2', '1', '9', '5', '3', '4', '8'},
         {'1', '9', '8', '3', '4', '2', '5', '6', '7'},
         {'8', '5', '9', '7', '6', '1', '4', '2', '3'},
